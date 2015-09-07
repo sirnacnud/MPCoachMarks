@@ -293,6 +293,20 @@ static const BOOL kEnableSkipButton = YES;
             }
         }
             break;
+        case LABEL_POSITION_TOP_LEFT:
+        {
+            x -= self.lblSpacing;
+            y = markRect.origin.y - self.lblCaption.frame.size.height - self.lblSpacing;
+            if(showArrow) {
+                self.arrowImage = [[UIImageView alloc] initWithImage:[self fetchImage:@"arrow-down-left"]];
+                CGRect imageViewFrame = self.arrowImage.frame;
+                imageViewFrame.origin.x = markRect.origin.x - imageViewFrame.size.width - self.lblSpacing;
+                imageViewFrame.origin.y = markRect.origin.y - self.lblSpacing / 2;
+                self.arrowImage.frame = imageViewFrame;
+                [self addSubview:self.arrowImage];
+            }
+        }
+            break;
         case LABEL_POSITION_LEFT:
         {
             y = markRect.origin.y + markRect.size.height/2 - self.lblCaption.frame.size.height/2;
