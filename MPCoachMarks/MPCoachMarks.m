@@ -151,8 +151,6 @@ static const BOOL kEnableSkipButton = YES;
     anim.delegate = self;
     anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
     anim.duration = self.animationDuration;
-    anim.removedOnCompletion = NO;
-    anim.fillMode = kCAFillModeForwards;
     anim.fromValue = (__bridge id)(mask.path);
     anim.toValue = (__bridge id)(maskPath.CGPath);
     [mask addAnimation:anim forKey:@"path"];
