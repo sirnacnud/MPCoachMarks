@@ -18,6 +18,13 @@ static const CGFloat kMaskAlpha = 0.75f;
 static const BOOL kEnableContinueLabel = YES;
 static const BOOL kEnableSkipButton = YES;
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_9_3
+@interface MPCoachMarks () <CAAnimationDelegate>
+#else
+@interface MPCoachMarks ()
+#endif
+@end
+
 @implementation MPCoachMarks {
     CAShapeLayer *mask;
     NSUInteger markIndex;
